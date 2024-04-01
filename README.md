@@ -1,8 +1,11 @@
 
 # AIO Music Helper
 
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
 An all-in-one bot to handle all your musomaniac needs
 ## Features
+
 
 - Supports Spotify, Deezer, Tidal, Qobuz, KKBOX
 ## Installation
