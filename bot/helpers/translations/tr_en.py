@@ -6,19 +6,10 @@ class EN(object):
 # BASICS
 #
 #----------------
-    WELCOME_MSG = "Hello {} Sir"
-    START_DOWNLOAD = "Starting to download..........."
-    ANTI_SPAM_WAIT = "Wait for the current task to complete!"
-    TASK_COMPLETED = "Download Finished"   
-    SONG_COPY_EXIST = 'Song already downloaded exist'
-    SONG_COPY_EXIST_INFO = """
-<b>ITEM NO - {}</b>
-Title : {}
-Artist : {}
-Source : {}
-Quality : {}
-{} : {}
-""" 
+    WELCOME_MSG = "👋🏽 𝐇𝐢 {}"
+    START_DOWNLOAD = "⏬ 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠.."
+    ANTI_SPAM_WAIT = "⛔️ 𝗪𝐚𝐢𝐭 𝐓𝐨 𝐓𝐚𝐬𝐤 𝐂𝐨𝐦𝐩𝐥𝐞𝐭𝐞!"
+    TASK_COMPLETED = "✅ 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐞𝐝 𝐂𝐨𝐦𝐩𝐥𝐞𝐭𝐞𝐝"    
 
 
 
@@ -27,23 +18,23 @@ Quality : {}
 # AUTHENTICATIONS
 #
 #----------------
-    CHAT_AUTH_SUCCESS = "Successfully authed {0} <code>{1}</code>"
-    ADD_ADMIN_SUCCESS = "Successfully added {} as an admin"
-    NO_ID_TO_AUTH = "No ID provided to add!"
+    CHAT_AUTH_SUCCESS = "✅ Successfully authed {0} <code>{1}</code>"
+    ADD_ADMIN_SUCCESS = "✅ Successfully added {} as an admin"
+    NO_ID_TO_AUTH = "⛔️ No ID provided to add!"
     # TIDAL
-    TIDAL_NOT_AUTH = "No Tidal Logins Given."
+    TIDAL_NOT_AUTH = "❌ 𝗡𝗢 𝗧𝗜𝗗𝗔𝗟 𝗟𝗢𝗚𝗜𝗡"
     TIDAL_AUTH_NEXT_STEP = "Go to {0} within the next {1} to complete tidal authentication."
-    TIDAL_AUTH_SUCCESS = "Tidal authentication successful.\n\nIt is now valid for {}"
-    TIDAL_ALREADY_AUTH = "Your authentication is already done.\nIts is valid for {}"
+    TIDAL_AUTH_SUCCESS = "✅ Tidal authentication successful.\n\nIt is now valid for {}"
+    TIDAL_ALREADY_AUTH = "✅ Your authentication is already done.\nIts is valid for {}"
     TIDAL_API_KEY_CHANGED = "Successfully updated the API Key to {} - {}"
     # KKBOX
-    KKBOX_NOT_AUTH = "KKBOX account credentials not given or subcription expired"
+    KKBOX_NOT_AUTH = "❌ KKBOX account credentials not given or subcription expired"
     # DEEZER
-    DEEZER_NOT_AUTH = "Deezer credentials not provided"
+    DEEZER_NOT_AUTH = "❌ Deezer credentials not provided"
     # QOBUZ
-    QOBUZ_NOT_AUTH = "Qobuz credentials not provided"
+    QOBUZ_NOT_AUTH = "❌ Qobuz credentials not provided"
     # SPOTIFY
-    SPOTIFY_NOT_AUTH = "Spotify credentials not provided"
+    SPOTIFY_NOT_AUTH = "❌ Spotify credentials not provided"
 
 
 
@@ -52,20 +43,54 @@ Quality : {}
 # MUSIC DETAILS - TELEGRAM
 #
 #----------------
-    ALBUM_TEMPLATE = """
-🎶 <b>Title :</b> {title}
-👤 <b>Artist :</b> {artist}
-📅 <b>Release Date :</b> {date}
-🔢 <b>Total Tracks :</b> {totaltracks}
-📀 <b>Total Volumes :</b> {totalvolume}
-💫 <b>Quality :</b> {quality}
-📡 <b>Provider :</b> {provider}
-🔞 <b>Explicit :</b> {explicit}
+    USER_MENTION_ALBUM = "<b>ʀᴇQᴜᴇꜱᴛᴇᴅ ʙʏ :</b> {}"
+    USER_MENTION_TRACK = "<b>ʀᴇQᴜᴇꜱᴛᴇᴅ ʙʏ <b>{}"
+
+    # TIDAL
+    TIDAL_ALBUM_DETAILS = """
+💽 <b>ᴀʟʙᴜᴍ ᴛɪᴛʟᴇ :</b> {0}
+👤 <b>ᴀʀᴛɪꜱᴛ :</b> {1}
+📅 <b>ʀᴇʟᴇᴀꜱᴇ ᴅᴀᴛᴇ :</b> {2}
+📀 <b>ᴛᴏᴛᴀʟ ᴛʀᴀᴄᴋꜱ :</b> {3}
+"""
+    # KKBOX
+    KKBOX_ALBUM_DETAILS = """
+🎶 <b>ᴀʟʙᴜᴍ ᴛɪᴛʟᴇ :</b> {0}
+👤 <b>ᴀʀᴛɪꜱᴛ :</b> {1}
+📅 <b>ʀᴇʟᴇᴀꜱᴇ ᴅᴀᴛᴇ :</b> {2}
+📀 <b>ᴛᴏᴛᴀʟ ᴛʀᴀᴄᴋꜱ :</b> {3}
 """
 
-    # The caption on the uploaded audio file in Telegram
-    # Keep it blank for no captions
-    TRACK_TEMPLATE = ""
+    # QOBUZ
+    QOBUZ_ALBUM_DETAILS = """
+<b>ᴀʟʙᴜᴍ ᴛɪᴛʟᴇ :</b> {0}
+<b>ᴀʀᴛɪꜱᴛ :</b> {1}
+<b>ʀᴇʟᴇᴀꜱᴇ ᴅᴀᴛᴇ :</b> {2}
+<b>ᴛᴏᴛᴀʟ ᴛʀᴀᴄᴋꜱ :</b> {3}
+"""
+
+    
+    # DEEZER
+    DEEZER_ALBUM_DETAILS = """
+🎶 <b>ᴀʟʙᴜᴍ ᴛɪᴛʟᴇ :</b> {0}
+👤 <b>ᴀʀᴛɪꜱᴛ :</b> {1}
+📅 <b>ʀᴇʟᴇᴀꜱᴇ ᴅᴀᴛᴇ :</b> {2}
+🔢 <b>ᴛᴏᴛᴀʟ ᴛʀᴀᴄᴋꜱ :</b> {3}
+"""
+
+
+    # SPOTIFY
+    SPOTIFY_ALBUM_DETAILS = """
+🎶 ᴀʟʙᴜᴍ ᴛɪᴛʟᴇ :</b> {0}
+👤 <b>ᴀʀᴛɪꜱᴛ :</b> {1}
+📅 <b>ʀᴇʟᴇᴀꜱᴇ ᴅᴀᴛᴇ :</b> {2}
+🔢 <b>ᴛᴏᴛᴀʟ ᴛʀᴀᴄᴋꜱ :</b> {3}
+"""
+
+
+    QUALITY_ADDON = "<b>Qᴜᴀʟɪᴛʏ :</b> {}\n"
+
+    
 
     
 
@@ -136,19 +161,7 @@ API Key Valid : <code>{2}</code>
 <b>Auth Method : </b><code>{2}</code>
 <b>Get Spatial : </b><code>{3}</code>
     """
-    #
-    # DEEZER PANEL
-    #
-    SPOTIFY_SETTINGS_PANEL = """
-<b>Configure Spotify Settings Here</b>
 
-<b><u>CURRENT SETTINGS</u></b>
-
-<b>Quality : </b><code>{0}</code>
-<b>Auth Status : </b><code>{1}</code>
-<b>ReEncode Files : </b><code>{2}</code>
-<b>File Format : </b><code>{3}</code>
-"""
     
 
 
@@ -165,7 +178,7 @@ API Key Valid : <code>{2}</code>
     QOBUZ_BUTTON = "QOBUZ SETTINGS"
     DEEZER_BUTTON = "DEEZER SETTINGS"
     KKBOX_BUTTON = 'KKBOX SETTINGS'
-    SPOTIFY_BUTTON = "SPOTIFY SETTINGS"
+    SOUNDCLOUD_BUTTON = "SOUNDCLOUD SETTINGS"
     CLOSE_BUTTON = "CLOSE"
     API_BUTTON = "API"
     SPATIAL_BUTTON = "Spatial Settings"
@@ -183,21 +196,16 @@ API Key Valid : <code>{2}</code>
     HIFI_QUALITY = "HiFi"
     HIGH_QUALITY = "High"
     NORMAL_QUALITY = "Normal"
-    # QUALIY
+    # QOBUZ_QUALIY
     Q_LOSELESS = "LOSELESS"
     Q_320 = "320K"
     Q_HIRES_7 = "HiRes =< 96"
     Q_HIRES_27 = "HiRes > 96"
-    Q_160 = "160K"
     # DEEZER SPATIAL BUTTONS
     DZ_ENABLE_MHM1 = "Use MHM1 Codec"
     DZ_ENABLE_MHA1 = 'Use MHA1 Codec'
-    # DUPLICATE CHECK BUTTONS
-    GET_MUSIC_BUTTON = 'Get Item : {}'
-    REDOWNLOAD_BUTTON = 'REDOWNLOAD SONG'
-    # SPOTIFY
-    B_SPOTIFY_REENCODE = 'REENCODE : {}'
-    B_SPOTIFY_FORMAT = 'FORMAT : {}'
+
+
 
 
 #----------------
@@ -207,9 +215,7 @@ API Key Valid : <code>{2}</code>
 #----------------
     ERR_LINK_RECOGNITION = "Sorry, couldn't recognise the given link."
     # QOBUZ
-    ERR_QOBUZ_NOT_STREAMABLE = "QOBUZ : This track/album is not available to download."
-    ERR_QOBUZ_RESTRICTION = "QOBUZ : Track Restricted By Purchase Credentials"
-    ERR_QOBUZ_NOT_AVAILABLE = 'QOBUZ : Track not available for download'
+    ERR_QOBUZ_NOT_STREAMABLE = "This album is not available to download."
     ERR_NO_LINK = "No link provided to download from"
     # DEEZER
     ERR_DZ_QUALITY_NOT_AVAIL = "Selected quality not available in your account."
@@ -220,4 +226,3 @@ API Key Valid : <code>{2}</code>
     ERR_TD_API_KEY = "Tidal API Key not valid. Please change your API Key."
     # SPOTIFY
     ERR_SPOT_NOT_AVAIL = "Sorry, Track not available"
-    ERR_SPOT_NOT_ENCODE_MP3 = "ReEncode needs to enabled for MP3. Enabling now."
