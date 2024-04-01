@@ -6,9 +6,9 @@
     "music",
     "uploader"
   ],
-  "website": "https://github.com/rinrinx/aio/tree/alpha",
-  "repository": "https://github.com/rinrinx/aio/tree/alpha",
-  "success_url": "https://github.com/rinrinx/aio/tree/alpha",
+  "website": "https://github.com/MKA2025/AIO-Public/tree/alpha",
+  "repository": "https://github.com/MKA2025/AIO-Public/tree/alpha",
+  "success_url": "https://github.com/MKA2025/AIO-Public/tree/alpha",
   "env": {
     "TG_BOT_TOKEN": {
       "description": "Your Telegram bot token",
