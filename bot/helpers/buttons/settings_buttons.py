@@ -1,4 +1,5 @@
 from bot.helpers.translations import lang
+from bot.helpers.database import fetch_data, insert_data
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 # Function to create an InlineKeyboardButton
@@ -54,14 +55,11 @@ def tidal_menu_set():
     inline_keyboard = inline_keyboard + exit_button
     return InlineKeyboardMarkup(inline_keyboard)
 
-# ... (other functions remain unchanged)
+# Example of using the database functions
+def save_user_data(user_id: int, user_data: str):
+    query = "INSERT INTO users (user_id, data) VALUES (?, ?)"
+    insert_data(query, (user_id, user_data))
 
-def common_auth_set(provider):
-    inline_keyboard = [
-        [
-            create_button(lang.ADD_AUTH_BUTTON, f"ADA_{provider}_add"),
-            create_button(lang.REMOVE_AUTH_BUTTON, f"RMA_{provider}_warn")
-        ]
-    ]
-    inline_keyboard = inline_keyboard + exit_button
-    return InlineKeyboardMarkup(inline_keyboard)
+def get_user_data(user_id: int):
+    query = "SELECT data FROM users WHERE user_id = ?"
+    return fetch_data(query, (user_id,))
