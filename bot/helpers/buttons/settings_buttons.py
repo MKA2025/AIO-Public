@@ -1,57 +1,40 @@
 from bot.helpers.translations import lang
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
+# Function to create an InlineKeyboardButton
+def create_button(text: str, callback_data: str) -> InlineKeyboardButton:
+    return InlineKeyboardButton(text=text, callback_data=callback_data)
+
 # Some common button addon - Main menu and Close
 exit_button = [
     [
-        InlineKeyboardButton(text=lang.MAIN_MENU_BUTTON, callback_data="main_menu"),
-        InlineKeyboardButton(text=lang.CLOSE_BUTTON, callback_data="close")
+        create_button(lang.MAIN_MENU_BUTTON, "main_menu"),
+        create_button(lang.CLOSE_BUTTON, "close")
     ]
 ]
 
 def main_menu_set():
     inline_keyboard = [
         [
-            InlineKeyboardButton(
-                text=lang.TG_AUTH_BUTTON,
-                callback_data="tgPanel"
-            )
+            create_button(lang.TG_AUTH_BUTTON, "tgPanel")
         ],
         [
-            InlineKeyboardButton(
-                text=lang.TIDAL_BUTTON,
-                callback_data="tidalPanel"
-            )
+            create_button(lang.TIDAL_BUTTON, "tidalPanel")
         ],
         [
-            InlineKeyboardButton(
-                text=lang.KKBOX_BUTTON,
-                callback_data="kkboxPanel"
-            )
+            create_button(lang.KKBOX_BUTTON, "kkboxPanel")
         ],
         [
-            InlineKeyboardButton(
-                text=lang.QOBUZ_BUTTON,
-                callback_data="qobuzPanel"
-            )
+            create_button(lang.QOBUZ_BUTTON, "qobuzPanel")
         ],
         [
-            InlineKeyboardButton(
-                text=lang.DEEZER_BUTTON,
-                callback_data="deezerPanel"
-            )
+            create_button(lang.DEEZER_BUTTON, "deezerPanel")
         ],
         [
-            InlineKeyboardButton(
-                text=lang.SPOTIFY_BUTTON,
-                callback_data="spotifyPanel"
-            )
+            create_button(lang.SPOTIFY_BUTTON, "spotifyPanel")
         ],
         [
-            InlineKeyboardButton(
-                text=lang.CLOSE_BUTTON,
-                callback_data="close"
-            )
+            create_button(lang.CLOSE_BUTTON, "close")
         ]
     ]
     return InlineKeyboardMarkup(inline_keyboard)
@@ -59,22 +42,13 @@ def main_menu_set():
 def tidal_menu_set():
     inline_keyboard = [
         [
-            InlineKeyboardButton(
-                text=lang.AUTH_BUTTON,
-                callback_data="ADA_tidal_panel"
-            )
+            create_button(lang.AUTH_BUTTON, "ADA_tidal_panel")
         ],
         [
-            InlineKeyboardButton(
-                text=lang.QUALITY_BUTTON,
-                callback_data="QA_tidal"
-            )
+            create_button(lang.QUALITY_BUTTON, "QA_tidal")
         ],
         [
-            InlineKeyboardButton(
-                text=lang.API_BUTTON,
-                callback_data="apiTidal_panel"
-            )
+            create_button(lang.API_BUTTON, "apiTidal_panel")
         ]
     ]
     inline_keyboard = inline_keyboard + exit_button
@@ -85,22 +59,9 @@ def tidal_menu_set():
 def common_auth_set(provider):
     inline_keyboard = [
         [
-            InlineKeyboardButton(
-                text=lang.ADD_AUTH_BUTTON,
-                callback_data=f"ADA_{provider}_add"
-            ),
-            InlineKeyboardButton(
-                text=lang.REMOVE_AUTH_BUTTON,
-                callback_data=f"RMA_{provider}_warn"
-            )
+            create_button(lang.ADD_AUTH_BUTTON, f"ADA_{provider}_add"),
+            create_button(lang.REMOVE_AUTH_BUTTON, f"RMA_{provider}_warn")
         ]
     ]
     inline_keyboard = inline_keyboard + exit_button
     return InlineKeyboardMarkup(inline_keyboard)
-
-# Add error handling for lang attributes
-try:
-    # Example usage of lang attributes
-    lang.MAIN_MENU_BUTTON
-except AttributeError:
-    print("Error: Missing translation for MAIN_MENU_BUTTON")
